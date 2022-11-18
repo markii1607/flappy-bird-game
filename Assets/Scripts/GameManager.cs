@@ -16,7 +16,20 @@ public class GameManager : MonoBehaviour
     }
 
     public void Play() {
-        
+        score = 0;
+        scoreText.SetText(score.ToString());
+
+        gameOver.SetActive(false);
+        playButton.SetActive(false);
+
+        Time.timeScale = 1f;
+        player.enabled = true;
+
+        // Destroy all obstacles in the screen
+        Obstacles[] obstacles = FindObjectsOfType<Obstacles>();
+        for (int i = 0; i < obstacles.Length; i++) {
+            Destroy(obstacles[i].gameObject);
+        }
     }
 
     public void Pause() {
