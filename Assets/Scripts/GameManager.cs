@@ -28,9 +28,14 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore() {
         score++;
+
+        scoreText.SetText(score.ToString());
     }
 
     public void GameOver() {
-        Debug.Log("Game Over");
+        gameOver.SetActive(true);
+        playButton.SetActive(true);
+
+        Pause();
     }
 }
