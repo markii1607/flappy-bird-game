@@ -53,6 +53,14 @@ public class Player : MonoBehaviour
 
     // triggers
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.tag);
+        // Game Over
+        if (other.tag == "Obstacle") {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+
+        // Score
+        if (other.tag == "Scoring") {
+            FindObjectOfType<GameManager>().IncreaseScore();
+        }
     }
 }

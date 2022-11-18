@@ -4,11 +4,11 @@ public class GameManager : MonoBehaviour
 {
     private int score;
 
-    private void IncreaseScore() {
+    public void IncreaseScore() {
         score++;
     }
 
-    private void GameOver() {
+    public void GameOver() {
         Debug.Log("Game Over");
     }
 }
